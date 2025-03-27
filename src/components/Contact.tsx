@@ -1,1 +1,7 @@
-// This file can be deleted as we're no longer using the contact form
+export const Contact = () => {
+  return (
+    <section id="contact">
+      {/* Contact form implementation */}
+    </section>
+  );
+};

@@ -13,7 +13,7 @@ export function SEO({
   image = "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1200&h=630",
   article = false 
 }: SEOProps) {
-  const siteUrl = "https://eliasl.org";
+  
   const url = window.location.href;
 
   return (

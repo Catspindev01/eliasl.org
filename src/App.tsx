@@ -1,7 +1,5 @@
-import { MoonIcon, SunIcon, GithubIcon, TwitterIcon, MailIcon } from "lucide-react";
+import { MoonIcon, SunIcon, GithubIcon, TwitterIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { HelmetProvider } from 'react-helmet-async';
 import { motion } from "framer-motion";
@@ -10,7 +8,6 @@ import { SEO } from "@/components/SEO";
 import { Projects } from "@/components/Projects";
 import { Skills } from "@/components/Skills";
 import { TypedIntro } from "@/components/TypedIntro";
-import { Contact } from "@/components/Contact";
 import './App.css';
 
 function App() {
@@ -58,7 +55,6 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/skills" element={<Skills />} />
-            <Route path="/contact" element={<Contact />} />
           </Routes>
 
           {/* Footer */}
@@ -238,7 +234,7 @@ function HomePage() {
                   title: "Web Animation",
                   description: "Creating smooth, engaging animations and transitions to enhance user experience."
                 }
-              ].map((service, index) => (
+              ].map((service) => (
                 <div key={service.title} className="minimal-card">
                   <h3 className="heading-md mb-2">{service.title}</h3>
                   <p className="body-md">{service.description}</p>
@@ -288,7 +284,7 @@ function HomePage() {
                   title: "HomeLab Development",
                   description: "Currently managing a HomeLab environment, working with Proxmox and various infrastructure technologies."
                 }
-              ].map((milestone, index) => (
+              ].map((milestone) => (
                 <div key={milestone.title} className="minimal-card">
                   <h3 className="heading-md mb-2">{milestone.title}</h3>
                   <p className="body-md">{milestone.description}</p>

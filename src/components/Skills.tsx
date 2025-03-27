@@ -29,7 +29,7 @@ export function Skills() {
             >
               <h3 className="heading-md">{skillGroup.category}</h3>
               <ul className="space-y-4">
-                {skillGroup.items.map((skill, index) => (
+                {skillGroup.items.map((skill) => (
                   <li key={skill} className="body-md flex items-center gap-2">
                     <span className="inline-block w-1 h-1 rounded-full bg-foreground"></span>
                     {skill}
