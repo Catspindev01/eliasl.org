@@ -1,4 +1,7 @@
 import * as React from 'react';
+import { TooltipProps } from "recharts";
+type ValueType = string | number | Array<string | number>;
+type NameType = string | number;
 
 import { cn } from '@/lib/utils';
 
@@ -182,10 +185,10 @@ const ChartTooltipContent = React.forwardRef<
       >
         {!nestLabel ? tooltipLabel : null}
         <div className="grid gap-1.5">
-          {payload.map((item: Payload<ValueType, NameType>, index: number) => {
-            const key = `${nameKey || item.name || item.dataKey || 'value'}`;
+          {payload?.map((item, index: number) => {
+            const key = `${nameKey || item?.name || item?.dataKey || 'value'}`;
             const itemConfig = getPayloadConfigFromPayload(config, item, key);
-            const indicatorColor = color || item.payload.fill || item.color;
+            const indicatorColor = color || item?.payload?.fill || item?.color;
 
             return (
               <div
@@ -318,7 +321,7 @@ ChartLegendContent.displayName = 'ChartLegend';
 // Helper to extract item config from a payload.
 function getPayloadConfigFromPayload(
   config: ChartConfig,
-  payload: unknown,
+  payload: TooltipProps<ValueType, NameType>['payload'] | unknown,
   key: string
 ) {
   if (typeof payload !== 'object' || payload === null) {
