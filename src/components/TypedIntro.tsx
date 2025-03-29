@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const phrases = [
-  "Full Stack Developer",
   "UI/UX Enthusiast",
   "Open Source Contributor",
 ];
